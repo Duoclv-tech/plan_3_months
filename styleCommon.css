@@ -1,0 +1,173 @@
+task-checkbox:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background-color: #333;
+  padding: 1rem;
+  margin-bottom: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+}
+
+nav a.active {
+  background-color: #555;
+  border-radius: 4px;
+}
+
+.page {
+  display: none;
+  padding: 20px;
+}
+
+.page.active {
+  display: block;
+}
+
+.schedule-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+/* Journey page styles */
+.journey-list {
+  /* max-width: 600px; */
+  margin: 0 auto;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+}
+
+.task-item input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.task-item.completed {
+  background-color: #e8ffe8;
+  text-decoration: line-through;
+}
+
+.schedule-container {
+  padding: 1rem;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  font-size: 14px;
+}
+
+.schedule-table th,
+.schedule-table td {
+  border: 1px solid #e5e7eb;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.schedule-table th {
+  background: #f3f4f6;
+  font-weight: 600;
+  min-width: 100px;
+}
+
+.time-column {
+  background: #f9fafb;
+  font-weight: 500;
+}
+
+.task-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.task-checkbox {
+  width: 16px;
+  height: 16px;
+}
+
+.study_english {
+  background: #90caf9;
+}
+
+.study_code {
+  background: #64b5f6;
+}
+
+.study {
+  background: #90caf9;
+}
+
+.work {
+  background: #81c784;
+}
+.personal {
+  background: #ffb74d;
+}
+.exercise {
+  background: #f48fb1;
+}
+.cooking {
+  background: #ce93d8;
+}
+.free-time {
+  background: #9fa8da;
+}
+.sleep {
+  background: #b0bec5;
+}
+
+.legend {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 14px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+}
+
+.legend-color {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+}

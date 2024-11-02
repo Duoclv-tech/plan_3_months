@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styleCommon.css" />
+    <link rel="stylesheet" href="journey.css">
+  </head>
+
+  <body>
+    <nav>
+      <a href="index.html" data-page="home" class="active">Home</a>
+      <a href="journey.html" data-page="journey">Journey</a>
+    </nav>
+    <div id="journey" class="page active">
+        <h1>My Journey</h1>
+
+        <div class="topic-group">
+            <div class="topic-title">Giao tiếp Cơ bản & Cá nhân</div>
+            <div class="lesson-item">
+                <input type="checkbox" class="lesson-checkbox">
+                <span class="lesson-text">Lesson 1: Introduce yourself</span>
+            </div>
+            <div class="lesson-item">
+                <input type="checkbox" class="lesson-checkbox">
+                <span class="lesson-text">Lesson 2: Strengths and Weaknesses</span>
+            </div>
+            <div class="lesson-item">
+                <input type="checkbox" class="lesson-checkbox">
+                <span class="lesson-text">Lesson 3: Opinion</span>
+            </div>
+        </div>
+
+        <div class="topic-group">
+            <div class="topic-title">Cuộc sống Hàng ngày</div>
+            <div class="lesson-item">
+                <input type="checkbox" class="lesson-checkbox">
+                <span class="lesson-text">Lesson 1: Daily routine</span>
+            </div>
+            <div class="lesson-item">
+                <input type="checkbox" class="lesson-checkbox">
+                <span class="lesson-text">Lesson 2: Leisure activities</span>
+            </div>
+            <div class="lesson-item">
+                <input type="checkbox" class="lesson-checkbox">
+                <span class="lesson-text">Lesson 3: Sports and Exercises</span>
+            </div>
+        </div>
+
+        <div class="topic-group">
+            <div class="topic-title">Mua sắm & Tiêu dùng</div>
+            <div class="lesson-item">
+                <input type="checkbox" class="lesson-checkbox">
+                <span class="lesson-text">Lesson 1: Clothes and Shopping</span>
+            </div>
+            <div class="lesson-item">
+                <input type="checkbox" class="lesson-checkbox">
+                <span class="lesson-text">Lesson 2: Food and ordering</span>
+            </div>
+            <div class="lesson-item">
+                <input type="checkbox" class="lesson-checkbox">
+                <span class="lesson-text">Lesson 3: Money and Banking</span>
+            </div>
+        </div>
+
+        <div class="topic-group">
+            <div class="topic-title">Du lịch & Địa điểm</div>
+            <div class="lesson-item">
+                <input type="checkbox" class="lesson-checkbox">
+                <span class="lesson-text">Lesson 1: Travelling</span>
+            </div>
+            <div class="lesson-item">
+                <input type="checkbox" class="lesson-checkbox">
+                <span class="lesson-text">Lesson 2: Countries and Places</span>
+            </div>
+            <div class="lesson-item">
+                <input type="checkbox" class="lesson-checkbox">
+                <span class="lesson-text">Lesson 3: Transportation</span>
+            </div>
+            <div class="lesson-item">
+                <input type="checkbox" class="lesson-checkbox">
+                <span class="lesson-text">Lesson 4: Housing and Accommodation</span>
+            </div>
+            <div class="lesson-item">
+                <input type="checkbox" class="lesson-checkbox">
+                <span class="lesson-text">Lesson 5: Weather</span>
+            </div>
+        </div>
+
+        <div class="topic-group">
+            <div class="topic-title">Công việc & Văn phòng</div>
+            <div class="lesson-item">
+                <input type="checkbox" class="lesson-checkbox">
+                <span class="lesson-text">Lesson 1: Works and Jobs</span>
+            </div>
+            <div class="lesson-item">
+                <input type="checkbox" class="lesson-checkbox">
+                <span class="lesson-text">Lesson 2: At the office</span>
+            </div>
+        </div>
+
+        <div class="topic-group">
+            <div class="topic-title">Sức khỏe & Đời sống</div>
+            <div class="lesson-item">
+                <input type="checkbox" class="lesson-checkbox">
+                <span class="lesson-text">Lesson 1: Health and Body</span>
+            </div>
+            <div class="lesson-item">
+                <input type="checkbox" class="lesson-checkbox">
+                <span class="lesson-text">Lesson 2: Love and dating</span>
+            </div>
+        </div>
+
+        <div class="topic-group">
+            <div class="topic-title">Văn hóa & Xã hội</div>
+            <div class="lesson-item">
+                <input type="checkbox" class="lesson-checkbox">
+                <span class="lesson-text">Lesson 1: Holidays and Events</span>
+            </div>
+            <div class="lesson-item">
+                <input type="checkbox" class="lesson-checkbox">
+                <span class="lesson-text">Lesson 2: Media and Trends</span>
+            </div>
+        </div>
+
+        <div class="total-lessons">
+            <p>Tổng số bài học: 20 bài</p>
+            <ul>
+                <li>Giao tiếp Cơ bản & Cá nhân: 3 bài</li>
+                <li>Cuộc sống Hàng ngày: 3 bài</li>
+                <li>Mua sắm & Tiêu dùng: 3 bài</li>
+                <li>Du lịch & Địa điểm: 5 bài</li>
+                <li>Công việc & Văn phòng: 2 bài</li>
+                <li>Sức khỏe & Đời sống: 2 bài</li>
+                <li>Văn hóa & Xã hội: 2 bài</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Lưu trạng thái checkbox vào localStorage
+        document.querySelectorAll('.lesson-checkbox').forEach(checkbox => {
+            const lessonText = checkbox.nextElementSibling.textContent;
+            
+            // Khôi phục trạng thái đã lưu
+            const savedState = localStorage.getItem(lessonText);
+            if (savedState === 'true') {
+                checkbox.checked = true;
+            }
+
+            // Lưu trạng thái khi thay đổi
+            checkbox.addEventListener('change', (e) => {
+                localStorage.setItem(lessonText, e.target.checked);
+            });
+        });
+    </script>
+  </body>
+</html>

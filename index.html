@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Schedule</title>
+    <link rel="stylesheet" href="styleCommon.css">
+    <!-- <link rel="stylesheet" href="schedule.css"> -->
+    <!-- <link rel="stylesheet" href="journey.css"> -->
+  </head>
+ 
+  <body>
+    <nav>
+      <a href="index.html" data-page="home" class="active">Home</a>
+      <a href="./journey.html" data-page="journey">Journey</a>
+    </nav>
+
+    <div id="home" class="page active">
+      <div
+        style="
+          text-align: center;
+          margin: 20px 0;
+          font-family: system-ui, -apple-system, sans-serif;
+        "
+      >
+        <h1>Schedule for 3 months</h1>
+        <pre>From 11/1/2024 to 1/2/2025</pre>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; padding: 0 20px;">
+        <span id="currentTime" style="font-size: 1.2em;">
+          <script>
+            function updateTime() {
+              const now = new Date();
+              document.getElementById('currentTime').textContent = `Today: ${now.toLocaleString()}`;
+            }
+            // setInterval(updateTime, 1000);
+            updateTime();
+          </script>
+        </span>
+        <span id="daysLeft" style="font-size: 1.2em;">
+          <script>
+            const endDate = new Date('2025-02-01');
+            const today = new Date();
+            const diffTime = endDate - today;
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            document.getElementById('daysLeft').textContent = `${diffDays} Days remaining`;
+          </script>
+        </span>
+      </div>
+
+      <div class="schedule-container">
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Monday</th>
+              <th>Tuesday</th>
+              <th>Wednesday</th>
+              <th>Thursday</th>
+              <th>Friday</th>
+              <th>Saturday</th>
+              <th>Sunday</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="time-column">05:30 - 06:30</td>
+              <td class="study_english date_2 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Study English
+                </div>
+              </td>
+              <td class="study_english date_3 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Study English
+                </div>
+              </td>
+              <td class="study_english date_4 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Study English
+                </div>
+              </td>
+              <td class="study_english date_5 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Study English
+                </div>
+              </td>
+              <td class="study_english date_6 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Study English
+                </div>
+              </td>
+              <td class="study_english date_7 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Study English
+                </div>
+              </td>
+              <td class="study_english date_1 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Study English
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="time-column">06:30 - 06:45</td>
+              <td class="personal date_2 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Personal
+                  hygiene
+                </div>
+              </td>
+              <td class="personal date_3 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Personal
+                  hygiene
+                </div>
+              </td>
+              <td class="personal date_4 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Personal
+                  hygiene
+                </div>
+              </td>
+              <td class="personal date_5 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Personal
+                  hygiene
+                </div>
+              </td>
+              <td class="personal date_6 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Personal
+                  hygiene
+                </div>
+              </td>
+              <td class="personal date_7 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Personal
+                  hygiene
+                </div>
+              </td>
+              <td class="personal date_1 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Personal
+                  hygiene
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="time-column">07:00 - 12:00</td>
+              <td class="work date_2 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Work
+                </div>
+              </td>
+              <td class="work date_3 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Work
+                </div>
+              </td>
+              <td class="work date_4 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Work
+                </div>
+              </td>
+              <td class="work date_5 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Work
+                </div>
+              </td>
+              <td class="work date_6 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Work
+                </div>
+              </td>
+              <td class="free-time date_7 task" rowspan="4">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Free time
+                </div>
+              </td>
+              <td class="study_code date_1 task" rowspan="4">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Coding
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="time-column">12:00 - 12:30</td>
+              <td class="study_english date_2 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Study English
+                </div>
+              </td>
+              <td class="study_english date_3 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Study English
+                </div>
+              </td>
+              <td class="study_english date_4 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Study English
+                </div>
+              </td>
+              <td class="study_english date_5 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Study English
+                </div>
+              </td>
+              <td class="study_english date_6 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Study English
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="time-column">13:30 - 17:30</td>
+              <td class="work date_2 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Work
+                </div>
+              </td>
+              <td class="work date_3 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Work
+                </div>
+              </td>
+              <td class="work date_4 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Work
+                </div>
+              </td>
+              <td class="work date_5 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Work
+                </div>
+              </td>
+              <td class="work date_6 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Work
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="time-column">17:30 - 19:00</td>
+              <td class="personal date_2 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Commute home
+                </div>
+              </td>
+              <td class="personal date_3 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Commute home
+                </div>
+              </td>
+              <td class="personal date_4 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Commute home
+                </div>
+              </td>
+              <td class="personal date_5 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Commute home
+                </div>
+              </td>
+              <td class="personal date_6 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Commute home
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="time-column">19:00 - 20:00</td>
+              <td class="exercise date_2 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Exercise
+                </div>
+              </td>
+              <td class="cooking date_3 task" rowspan="2">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Cook, Shower &
+                  Eat
+                </div>
+              </td>
+              <td class="exercise date_4 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Exercise
+                </div>
+              </td>
+              <td class="cooking date_5 task" rowspan="2">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Cook, Shower &
+                  Eat
+                </div>
+              </td>
+              <td class="exercise date_6 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Exercise
+                </div>
+              </td>
+              <td class="free-time date_7 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Free time
+                </div>
+              </td>
+              <td class="free-time date_1 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Free time
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="time-column">20:00 - 20:30</td>
+              <td class="personal date_2 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Shower
+                </div>
+              </td>
+              <td class="personal date_4 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Shower
+                </div>
+              </td>
+              <td class="personal date_6 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Shower
+                </div>
+              </td>
+              <td class="free-time date_7 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Free time
+                </div>
+              </td>
+              <td class="free-time date_1 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Free time
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="time-column">20:30 - 22:30</td>
+              <td class="study_english date_2 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Study
+                </div>
+              </td>
+              <td class="study_english date_3 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Study
+                </div>
+              </td>
+              <td class="study_english date_4 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Study
+                </div>
+              </td>
+              <td class="study_english date_5 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Study
+                </div>
+              </td>
+              <td class="study_english date_6 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Study
+                </div>
+              </td>
+              <td class="free-time date_7 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Free time
+                </div>
+              </td>
+              <td class="free-time date_1 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Free time
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="time-column">22:30 - 05:30</td>
+              <td class="sleep date_2 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Sleep
+                </div>
+              </td>
+              <td class="sleep date_3 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Sleep
+                </div>
+              </td>
+              <td class="sleep date_4 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Sleep
+                </div>
+              </td>
+              <td class="sleep date_5 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Sleep
+                </div>
+              </td>
+              <td class="sleep date_6 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Sleep
+                </div>
+              </td>
+              <td class="sleep date_7 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Sleep
+                </div>
+              </td>
+              <td class="sleep date_1 task">
+                <div class="task-cell">
+                  <input type="checkbox" class="task-checkbox" />Sleep
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="legend">
+          <div class="legend-item">
+            <div class="legend-color study_english"></div>
+            <span>Study English</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color study_code"></div>
+            <span>Study Code</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color work"></div>
+            <span>Work</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color personal"></div>
+            <span>Personal Activities</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color exercise"></div>
+            <span>Exercise</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color cooking"></div>
+            <span>Cooking</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color free-time"></div>
+            <span>Free Time</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-color sleep"></div>
+            <span>Sleep</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="journey" class="page">
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          fetch('journey.html')
+            .then(response => response.text())
+            .then(data => {
+              document.getElementById('journey').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading journey.html:', error));
+        });
+      </script>
+    <!-- <div id="journey" class="page">
+      <h1>My Journey</h1>
+      <div class="journey-list">
+        <div class="task-item">
+          <input type="checkbox" id="task1" />
+          <label for="task1">Học 1000 từ vựng tiếng Anh cơ bản</label>
+        </div>
+        <div class="task-item">
+          <input type="checkbox" id="task2" />
+          <label for="task2">Hoàn thành khóa học HTML/CSS cơ bản</label>
+        </div>
+        <div class="task-item">
+          <input type="checkbox" id="task3" />
+          <label for="task3">Tập thể dục đều đặn mỗi tuần 3 buổi</label>
+        </div>
+        <div class="task-item">
+          <input type="checkbox" id="task4" />
+          <label for="task4">Đọc 1 cuốn sách về phát triển bản thân</label>
+        </div>
+        <div class="task-item">
+          <input type="checkbox" id="task5" />
+          <label for="task5">Hoàn thành 5 project coding nhỏ</label>
+        </div>
+      </div>
+    </div> -->
+
+    <script>
+      function calculateEnglishTime() {
+        const table = document.querySelector(".schedule-table");
+        let totalMinutes = 0;
+
+        const englishCells = table.getElementsByClassName("study_english");
+
+        for (const cell of englishCells) {
+          const timeRange = cell.parentElement.firstElementChild.textContent;
+          const [start, end] = timeRange.split(" - ");
+
+          const startMinutes = convertTimeToMinutes(start);
+          const endMinutes = convertTimeToMinutes(end);
+          const duration = endMinutes - startMinutes;
+
+          totalMinutes += duration;
+        }
+
+        const totalHours = totalMinutes / 60;
+
+        const results = document.createElement("div");
+        results.innerHTML = `
+        <div class="english-summary">
+          <p>English study time per week: ${totalHours} hours</p>
+        </div>
+      `;
+
+        document.querySelector(".schedule-container").appendChild(results);
+      }
+
+      function convertTimeToMinutes(time) {
+        const [hours, minutes] = time.split(":").map(Number);
+        return hours * 60 + minutes;
+      }
+
+      function resetDailyCheckboxes() {
+        const today = new Date().toDateString();
+        const savedToday = localStorage.getItem("last_reset_date");
+
+        if (savedToday !== today) {
+          // Clear all checkboxes and save new date
+          const checkboxes = document.querySelectorAll(".task-checkbox");
+          checkboxes.forEach((checkbox) => {
+            checkbox.checked = false;
+            localStorage.setItem(
+              `task_${today}_${checkbox.dataset.index}`,
+              false
+            );
+          });
+          localStorage.setItem("last_reset_date", today);
+        }
+      }
+
+      function calculateSleepTime() {
+        const table = document.querySelector(".schedule-table");
+        let totalMinutes = 0;
+
+        const sleepCells = table.getElementsByClassName("sleep");
+
+        for (const cell of sleepCells) {
+          const timeRange = cell.parentElement.firstElementChild.textContent;
+          const [start, end] = timeRange.split(" - ");
+
+          let startMinutes = convertTimeToMinutes(start);
+          let endMinutes = convertTimeToMinutes(end);
+          
+          // Handle overnight period
+          if (endMinutes < startMinutes) {
+            endMinutes += 24 * 60; // Add 24 hours in minutes
+          }
+          
+          const duration = endMinutes - startMinutes;
+          totalMinutes += duration;
+        }
+
+        const totalHours = totalMinutes / 60;
+        const averageSleepPerDay = totalHours / 7;
+
+        const results = document.createElement("div");
+        results.innerHTML = `
+          <div class="sleep-summary">
+            <p>Average sleep time per day: ${averageSleepPerDay.toFixed(1)} hours</p>
+          </div>
+        `;
+
+        document.querySelector(".schedule-container").appendChild(results);
+      }
+      
+      function getAllTaskElements() {
+        // Get all td elements with class 'task'
+        const taskElements = document.querySelectorAll('td.task');
+        const today = new Date(); 
+        const dateInWeek = today.getDay() + 1;  // Returns 0-6 (0 = Sunday, 6 = Saturday)
+        for (const taskElement of taskElements) {
+          const dateClasses = Array.from(taskElement.classList).find(c => c.startsWith('date_'));
+          if (dateClasses) {
+            if (dateClasses !== `date_${dateInWeek}`) {
+              const checkbox = taskElement.querySelector('.task-checkbox');
+              if (checkbox) {
+                checkbox.disabled = true;
+              }
+            }
+          }
+        }
+      }
+
+      // Navigation handling
+      // document.querySelectorAll("nav a").forEach((link) => {
+      //   link.addEventListener("click", (e) => {
+      //     e.preventDefault();
+      //     const pageId = e.target.getAttribute("data-page");
+
+      //     // Update active nav link
+      //     document
+      //       .querySelectorAll("nav a")
+      //       .forEach((l) => l.classList.remove("active"));
+      //     e.target.classList.add("active");
+
+      //     // Show active page
+      //     document
+      //       .querySelectorAll(".page")
+      //       .forEach((page) => page.classList.remove("active"));
+      //     document.getElementById(pageId).classList.add("active");
+      //   });
+      // });
+
+      // Task completion handling
+      document
+        .querySelectorAll('.task-item input[type="checkbox"]')
+        .forEach((checkbox) => {
+          checkbox.addEventListener("change", (e) => {
+            const taskItem = e.target.parentElement;
+            if (e.target.checked) {
+              taskItem.classList.add("completed");
+            } else {
+              taskItem.classList.remove("completed");
+            }
+          });
+        });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        console.log("DOM loaded");
+        try {
+          calculateEnglishTime();
+          calculateSleepTime();
+          getAllTaskElements();
+          // resetDailyCheckboxes();
+        } catch (error) {
+          console.error("Error running functions:", error);
+        }
+      });
+    </script>
+  </body>
+</html>
